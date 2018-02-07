@@ -19,17 +19,17 @@ def primality_test(x):
         return True
 
 input_val = 600851475143
-max_prime_factor = 0;
 
-# Loop over possible factors up to sqrt(input), 
-# checking if they are prime while keeping track of max
+# Loop over possible factors up to sqrt(input)
 for i in range(2, math.ceil(math.sqrt(input_val))):
     if (input_val % i == 0) and primality_test(i):
         # Since we only go up to sqrt(input), we have to check codivisor as well
+        # If codivisor here is also prime, it is guaranteed to be the largest
         if(primality_test(input_val/i)):
-            max_prime_factor = max(max_prime_factor, i, input_val/i)
+            max_prime_factor = input_val/i
+            break
         else:
-            max_prime_factor = max(max_prime_factor, i)            
+            max_prime_factor = i         
         
 print(max_prime_factor)
 print(primality_test(max_prime_factor))
