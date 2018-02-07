@@ -25,8 +25,9 @@ for i in range(2, math.ceil(math.sqrt(input_val))):
     if (input_val % i == 0) and primality_test(i):
         # Since we only go up to sqrt(input), we have to check codivisor as well
         # If codivisor here is also prime, it is guaranteed to be the largest
-        if(primality_test(input_val/i)):
-            max_prime_factor = input_val/i
+        codivisor = int(input_val/i)        
+        if primality_test(codivisor):
+            max_prime_factor = codivisor
             break
         else:
             max_prime_factor = i         
