@@ -13,7 +13,7 @@ def primality_test(x):
     else:
         # Loop over potential factors between 7 and sqrt(x)
         max_candidate = int(math.ceil(math.sqrt(x)))
-        for i in range(7, max_candidate):
+        for i in range(7, max_candidate+1):
             if (x % i == 0):
                 return False
         return True
