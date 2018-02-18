@@ -1,4 +1,4 @@
-# Script to solve Problem 7 on Project Euler
+# Script to solve Problem 12 on Project Euler
 import math
 
 # Returns number of divisors of input number
